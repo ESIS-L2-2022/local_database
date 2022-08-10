@@ -3,10 +3,14 @@ package com.yveskalume.localdb.database;
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
-import com.yveskalume.localdb.database.dao.UserDao;
-import com.yveskalume.localdb.database.model.User;
+import com.yveskalume.localdb.database.dao.RepositoryDao;
+import com.yveskalume.localdb.database.model.Owner;
+import com.yveskalume.localdb.database.model.Repository;
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {
+        Owner.class,
+        Repository.class
+}, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract UserDao userDao();
+    public abstract RepositoryDao repositoryDao();
 }
